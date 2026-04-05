@@ -1,0 +1,129 @@
+@import "@solana/wallet-adapter-react-ui/styles.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+[data-theme="dark"] {
+  --sol-darker: 10 11 15;
+  --sol-dark: 15 17 23;
+  --sol-card: 21 23 34;
+  --sol-border: 30 32 48;
+  --sol-hover: 37 40 64;
+  --sol-accent: 153 69 255;
+  --sol-accent2: 20 241 149;
+  --sol-accent3: 0 194 255;
+  --sol-text: 226 232 240;
+  --sol-muted: 107 114 128;
+  --sol-warn: 245 158 11;
+  --sol-error: 239 68 68;
+}
+
+[data-theme="light"] {
+  --p: 199 89% 72%;
+  --pc: 15 23 42;
+  --in: 199 89% 72%;
+  --inc: 15 23 42;
+  --color-primary: #7dd3fc;
+  --color-primary-content: #0f172a;
+  --color-info: #7dd3fc;
+  --color-info-content: #0f172a;
+
+  --sol-darker: 242 244 248;
+  --sol-dark: 248 250 252;
+  --sol-card: 255 255 255;
+  --sol-border: 226 232 240;
+  --sol-hover: 241 245 249;
+  --sol-accent: 122 52 214;
+  --sol-accent2: 5 150 105;
+  --sol-accent3: 2 132 199;
+  --sol-text: 15 23 42;
+  --sol-muted: 100 116 139;
+  --sol-warn: 217 119 6;
+  --sol-error: 220 38 38;
+}
+
+:root,
+[data-theme="dark"],
+[data-theme="light"] {
+  --p: 199 89% 72%;
+  --pc: 15 23 42;
+  --in: 199 89% 72%;
+  --inc: 15 23 42;
+  --color-primary: #7dd3fc;
+  --color-primary-content: #0f172a;
+  --color-info: #7dd3fc;
+  --color-info-content: #0f172a;
+
+  --app-light-blue: #7dd3fc;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #252840 #0f1117;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f1117;
+}
+::-webkit-scrollbar-thumb {
+  background: #252840;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #353860;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+.wallet-adapter-button-trigger {
+  background: transparent !important;
+}
+
+.wallet-adapter-button {
+  background: var(--app-light-blue) !important;
+  color: #0f172a !important;
+}
+
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #9945ff, #14f195);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(153, 69, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(153, 69, 255, 0.6);
+  }
+}
